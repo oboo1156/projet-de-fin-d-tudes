@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <a href="{% url 'counsel:create_story' %}">Story</a>
+</head>
+<body>
+    <h1>Welcome to the Home Page</h1>
+    <p>This is a simple home page.</p>
+    <p>
+        <ul>
+        {% for story in stories %}
+        <li> {{story}} <a href="{%url 'counsel:comment' pk=story.id %}"> See more</a></li>
+        {%endfor%}
+        </ul>
+    </p>
+</body>
+</html>
